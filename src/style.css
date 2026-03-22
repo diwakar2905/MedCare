@@ -376,6 +376,13 @@ textarea {
   font-size: 1.1rem;
 }
 
+.navbar-logo .logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
 .navbar-logo h1 {
   font-size: 1.35rem;
   font-weight: 700;
@@ -2296,7 +2303,7 @@ textarea {
 }
 
 /* =============================================
-   RESPONSIVE
+   RESPONSIVE DESIGN - TABLET (1024px and below)
    ============================================= */
 @media (max-width: 1024px) {
   .hero-content h1 {
@@ -2357,15 +2364,31 @@ textarea {
 
   .profile-photo {
     max-width: 280px;
+    margin: 0 auto;
   }
 
   .hd-features {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
 }
 
+/* =============================================
+   RESPONSIVE DESIGN - TABLET/MOBILE (768px and below)
+   ============================================= */
 @media (max-width: 768px) {
+  :root {
+    --max-width: 100%;
+  }
 
+  /* Navbar Adjustments */
   .nav-ticker,
   .nav-service {
     display: none;
@@ -2380,47 +2403,210 @@ textarea {
     display: flex;
   }
 
+  .navbar-top {
+    height: 54px;
+    padding: 0 16px;
+  }
+
+  .navbar-logo h1 {
+    font-size: 1.15rem;
+  }
+
+  .navbar-logo .logo-icon,
+  .navbar-logo .logo-img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navbar-logo .years-badge {
+    display: none;
+  }
+
+  /* Emergency & Floating Elements */
   .emergency-tab {
     display: none;
   }
 
+  .floating-phone {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+  }
+
+  /* Hero Section */
   .hero {
     min-height: auto;
-    padding: 40px 0 30px;
+    padding: 30px 0 20px;
   }
 
   .hero-content h1 {
     font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
   }
 
   .hero-search {
     flex-direction: column;
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  .hero-search input,
+  .hero-search select {
+    padding: 14px 16px;
+    border: 1px solid var(--border) !important;
+    margin-bottom: 8px;
+  }
+
+  .hero-search input:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .hero-search .btn {
+    width: 100%;
+    padding: 14px 16px;
   }
 
   .hero-quick-links {
-    gap: 8px;
+    gap: 6px;
+    margin-top: 12px;
   }
 
   .hero-ql-item {
     min-width: auto;
     flex: 1;
-    padding: 12px 8px;
+    padding: 10px 8px;
+    font-size: 0.75rem;
+  }
+
+  .hero-ql-item .ql-icon {
+    font-size: 1.2rem;
+  }
+
+  .hero-ql-item h4 {
+    font-size: 0.7rem;
+  }
+
+  .hero-ql-item p {
+    font-size: 0.65rem;
+  }
+
+  /* Hero Stats */
+  .hero-stat-item {
+    padding: 14px;
   }
 
   .hero-stat-item h3 {
     font-size: 1.3rem;
   }
 
-  .quick-actions-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-stat-item p {
+    font-size: 0.7rem;
   }
 
+  /* Sections */
+  .section {
+    padding: 35px 0;
+  }
+
+  .section-header {
+    margin-bottom: 25px;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header p {
+    font-size: 0.9rem;
+  }
+
+  /* Grids */
+  .quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .qa-card {
+    padding: 18px 10px;
+  }
+
+  .qa-card .qa-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    margin: 0 auto 8px;
+  }
+
+  .qa-card h3 {
+    font-size: 0.8rem;
+  }
+
+  .qa-card p {
+    font-size: 0.7rem;
+  }
+
+  /* Specialities */
   .specialities-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .spec-card {
+    padding: 16px 10px;
+  }
+
+  .spec-card .spec-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+    margin: 0 auto 8px;
+  }
+
+  .spec-card h3 {
+    font-size: 0.78rem;
   }
 
   .spec-list {
     grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .spec-item {
+    padding: 12px;
+  }
+
+  .spec-item .spec-icon-line {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .spec-item h3 {
+    font-size: 0.85rem;
+  }
+
+  .spec-cta-card {
+    padding: 24px 16px;
+  }
+
+  .spec-cta-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .spec-cta-card p {
+    font-size: 0.85rem;
+  }
+
+  /* Doctors */
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .doctor-card {
@@ -2429,92 +2615,1429 @@ textarea {
 
   .doctor-card .doctor-img {
     width: 100%;
-    min-height: 160px;
+    min-height: 140px;
+    font-size: 2.5rem;
   }
 
+  .doctor-card .doctor-info {
+    padding: 16px;
+  }
+
+  .doctor-card .doctor-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .doctor-card .doctor-info .speciality {
+    font-size: 0.78rem;
+  }
+
+  /* Hospitals */
   .hospitals-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
+  .hospital-card .hospital-img {
+    height: 160px;
+  }
+
+  .hospital-card .hospital-info {
+    padding: 16px;
+  }
+
+  .hospital-card .hospital-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .hospitals-scroll-wrapper {
+    gap: 12px;
+  }
+
+  .hospital-scroll-card {
+    min-width: 240px;
+    max-width: 240px;
+  }
+
+  /* Packages */
   .packages-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
+  .package-card .package-header {
+    padding: 20px 16px 16px;
+  }
+
+  .package-card .package-header .package-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .package-card .package-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .package-card .package-body {
+    padding: 16px;
+  }
+
+  .package-card .package-price .price {
+    font-size: 1.5rem;
+  }
+
+  .package-card .package-tests li {
+    font-size: 0.78rem;
+    padding: 6px 0;
+  }
+
+  /* International */
   .intl-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
+  .intl-card {
+    padding: 18px 12px;
+  }
+
+  .intl-card .intl-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    margin: 0 auto 8px;
+  }
+
+  .intl-card h3 {
+    font-size: 0.82rem;
+  }
+
+  .intl-card p {
+    font-size: 0.7rem;
+  }
+
+  /* Why Choose Us */
   .why-us-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
-  .testimonials-grid {
-    grid-template-columns: 1fr;
+  .wu-card {
+    padding: 18px 10px;
   }
 
+  .wu-card .wu-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+    margin: 0 auto 8px;
+  }
+
+  .wu-card h3 {
+    font-size: 1rem;
+  }
+
+  .wu-card p {
+    font-size: 0.75rem;
+  }
+
+  /* Blog */
   .blog-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
+  .blog-card .blog-img {
+    height: 160px;
+  }
+
+  .blog-card .blog-info {
+    padding: 16px;
+  }
+
+  .blog-card .blog-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .blog-card .blog-info p {
+    font-size: 0.8rem;
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .testimonials-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .testimonial-featured {
+    min-height: 300px;
+    padding: 20px;
+  }
+
+  .testimonial-featured .tf-content h3 {
+    font-size: 1rem;
+  }
+
+  .testimonial-featured .tf-content p {
+    font-size: 0.78rem;
+  }
+
+  .testimonial-item {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .testimonial-item .ti-thumb {
+    width: 80px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  .testimonial-item .ti-info h4 {
+    font-size: 0.8rem;
+  }
+
+  .testimonial-item .ti-info p {
+    font-size: 0.7rem;
+  }
+
+  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
+  .footer-col h3 {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .footer-col p {
+    font-size: 0.8rem;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-bottom p,
+  .footer-bottom-links a {
+    font-size: 0.75rem;
+  }
+
+  /* Forms */
   .form-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
+  .form-group label {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* Page Elements */
+  .page-banner {
+    padding: 50px 0 30px;
+  }
+
+  .page-banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .page-banner p {
+    font-size: 0.9rem;
+  }
+
+  .page-banner .breadcrumb {
+    font-size: 0.75rem;
+    gap: 4px;
+  }
+
+  /* Doctor Profile */
+  .doctor-profile-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .profile-photo {
+    max-width: 100%;
+    margin: 0;
+    aspect-ratio: auto;
+    max-height: 300px;
+  }
+
+  .profile-info h1 {
+    font-size: 1.4rem;
+  }
+
+  .profile-info .prof-spec {
+    font-size: 0.95rem;
+  }
+
+  .profile-meta-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .pm-item {
+    padding: 10px;
+  }
+
+  /* Hospital Detail */
+  .hospital-detail-hero {
+    height: 250px;
+  }
+
+  .hospital-detail-hero i {
+    font-size: 4rem;
+    right: 5%;
+  }
+
+  .hd-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .hd-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .hd-feature {
+    padding: 12px;
+  }
+
+  .hd-feature i {
+    font-size: 1rem;
+  }
+
+  .hd-feature h4 {
+    font-size: 0.78rem;
+  }
+
+  /* Contact */
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .contact-info-cards {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  .profile-meta-grid {
-    grid-template-columns: 1fr;
+  .ci-card {
+    padding: 16px;
   }
 
-  .section {
-    padding: 45px 0;
+  .ci-card h4 {
+    font-size: 0.82rem;
   }
 
-  .page-banner {
-    padding: 80px 0 40px;
+  .ci-card p {
+    font-size: 0.75rem;
   }
 
-  .page-banner h1 {
-    font-size: 1.6rem;
+  .map-placeholder {
+    height: 200px;
+  }
+
+  /* Emergency Banner */
+  .emergency-banner {
+    padding: 30px 0;
+  }
+
+  .emergency-banner h2 {
+    font-size: 1.4rem;
+  }
+
+  .emergency-banner p {
+    font-size: 0.9rem;
+  }
+
+  .appointment-banner {
+    padding: 12px 0;
+  }
+
+  .appointment-banner .container {
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .appointment-banner h3 {
+    font-size: 1rem;
+  }
+
+  .appointment-banner .phone-badge {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+  }
+
+  /* Modal */
+  .modal-box {
+    padding: 24px;
+    max-width: 90%;
+  }
+
+  .modal-box .modal-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+    margin: 0 auto 12px;
+  }
+
+  .modal-box h2 {
+    font-size: 1.1rem;
+  }
+
+  .modal-box p {
+    font-size: 0.85rem;
   }
 }
 
+/* =============================================
+   RESPONSIVE DESIGN - SMALL MOBILE (480px and below)
+   ============================================= */
 @media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  /* Navbar */
+  .navbar-top {
+    height: 48px;
+    padding: 0 12px;
+  }
+
+  .navbar-logo h1 {
+    font-size: 0.95rem;
+  }
+
+  .navbar-logo .logo-icon,
+  .navbar-logo .logo-img {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .hamburger {
+    width: 32px;
+    height: 32px;
+    gap: 4px;
+  }
+
+  .hamburger span {
+    width: 18px;
+    height: 1.5px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 20px 0 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-content p {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .hero-search {
+    padding: 6px;
+    margin: 0 auto 20px;
+  }
+
+  .hero-search input,
+  .hero-search select {
+    padding: 12px 10px;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .hero-search .btn {
+    padding: 12px 12px;
+    font-size: 0.75rem;
+  }
+
+  .hero-quick-links {
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .hero-ql-item {
+    padding: 8px 6px;
+  }
+
+  .hero-ql-item .ql-icon {
+    font-size: 1rem;
+  }
+
+  .hero-ql-item h4 {
+    font-size: 0.6rem;
+  }
+
+  .hero-ql-item p {
+    font-size: 0.55rem;
+  }
+
+  /* Hero Images */
+  .hero-image-left,
+  .hero-image-right {
+    font-size: 4rem;
+    opacity: 0.02;
+  }
+
+  /* Hero Stats */
+  .hero-stat-item {
+    padding: 10px;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .hero-stat-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .hero-stat-item p {
+    font-size: 0.6rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: 25px 0;
+  }
+
+  .section-header {
+    margin-bottom: 18px;
+  }
+
+  .section-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .section-header h2::after {
+    width: 40px;
+  }
+
+  .section-header p {
+    font-size: 0.8rem;
+    margin-top: 6px;
+  }
+
+  /* Grids - Two columns or single */
   .quick-actions-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .qa-card {
+    padding: 12px 8px;
+  }
+
+  .qa-card .qa-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+    margin: 0 auto 6px;
+  }
+
+  .qa-card h3 {
+    font-size: 0.7rem;
+  }
+
+  .qa-card p {
+    font-size: 0.6rem;
   }
 
   .specialities-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 
-  .intl-grid {
+  .spec-card {
+    padding: 12px 8px;
+  }
+
+  .spec-card .spec-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+    margin: 0 auto 6px;
+  }
+
+  .spec-card h3 {
+    font-size: 0.7rem;
+  }
+
+  .spec-item {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .spec-item .spec-icon-line {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .spec-item h3 {
+    font-size: 0.75rem;
+  }
+
+  .spec-tabs {
+    margin-bottom: 16px;
+    overflow-x: auto;
+  }
+
+  .spec-tab {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .spec-cta-card {
+    padding: 16px 12px;
+  }
+
+  .spec-cta-card h3 {
+    font-size: 1rem;
+  }
+
+  .spec-cta-card p {
+    font-size: 0.75rem;
+    margin-bottom: 16px;
+  }
+
+  /* Doctors */
+  .doctors-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
+  .doctor-card .doctor-img {
+    height: 120px;
+    font-size: 2rem;
+  }
+
+  .doctor-card .doctor-info {
+    padding: 12px;
+  }
+
+  .doctor-card .doctor-info h3 {
+    font-size: 0.85rem;
+  }
+
+  .doctor-card .doctor-info .speciality {
+    font-size: 0.7rem;
+  }
+
+  .doctor-card .doctor-meta {
+    gap: 2px;
+    margin-bottom: 8px;
+  }
+
+  .doctor-card .doctor-meta span {
+    font-size: 0.7rem;
+  }
+
+  .doctor-card .view-profile {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+  }
+
+  .doctor-card .doctor-bottom {
+    padding-top: 8px;
+  }
+
+  .doctor-card .doctor-bottom .fee {
+    font-size: 0.9rem;
+  }
+
+  .doctor-card .doctor-bottom .btn {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+
+  /* Hospitals */
+  .hospitals-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hospital-card .hospital-img {
+    height: 140px;
+    font-size: 2.5rem;
+  }
+
+  .hospital-card .hospital-info {
+    padding: 12px;
+  }
+
+  .hospital-card .hospital-info h3 {
+    font-size: 0.85rem;
+  }
+
+  .hospital-card .hospital-info .location {
+    font-size: 0.75rem;
+  }
+
+  .hospital-card .hospital-features {
+    margin-bottom: 12px;
+  }
+
+  .hospital-card .hospital-features .feature {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .hospitals-scroll-wrapper {
+    gap: 8px;
+  }
+
+  .hospital-scroll-card {
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  .hospital-scroll-card .h-img {
+    height: 120px;
+    font-size: 2rem;
+  }
+
+  .hospital-scroll-card .h-info {
+    padding: 12px;
+  }
+
+  .hospital-scroll-card .h-info h3 {
+    font-size: 0.8rem;
+  }
+
+  .hospital-scroll-card .h-info .h-loc {
+    font-size: 0.7rem;
+  }
+
+  .hospital-scroll-card .h-rating {
+    font-size: 0.75rem;
+  }
+
+  /* Packages */
+  .packages-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .package-card {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .package-card .package-badge {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .package-card .package-header {
+    padding: 16px 12px 12px;
+  }
+
+  .package-card .package-header .package-icon {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+  }
+
+  .package-card .package-header h3 {
+    font-size: 0.85rem;
+  }
+
+  .package-card .package-body {
+    padding: 12px;
+  }
+
+  .package-card .package-price .price {
+    font-size: 1.3rem;
+  }
+
+  .package-card .package-price .original {
+    font-size: 0.8rem;
+  }
+
+  .package-card .package-tests li {
+    font-size: 0.7rem;
+    padding: 5px 0;
+  }
+
+  .package-card .package-body .btn {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+
+  /* International */
+  .intl-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .intl-card {
+    padding: 12px 8px;
+  }
+
+  .intl-card .intl-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+    margin: 0 auto 6px;
+  }
+
+  .intl-card h3 {
+    font-size: 0.75rem;
+  }
+
+  .intl-card p {
+    font-size: 0.65rem;
+  }
+
+  /* Why Choose Us */
   .why-us-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 
-  .hero-content h1 {
-    font-size: 1.5rem;
+  .wu-card {
+    padding: 12px 8px;
+  }
+
+  .wu-card .wu-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+    margin: 0 auto 6px;
+  }
+
+  .wu-card h3 {
+    font-size: 0.85rem;
+  }
+
+  .wu-card p {
+    font-size: 0.65rem;
+  }
+
+  /* Blog */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .blog-card .blog-img {
+    height: 140px;
+    font-size: 2rem;
+  }
+
+  .blog-card .blog-info {
+    padding: 12px;
+  }
+
+  .blog-card .blog-meta {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .blog-card .blog-meta span {
+    font-size: 0.7rem;
+  }
+
+  .blog-card .blog-info h3 {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .blog-card .blog-info p {
+    font-size: 0.75rem;
+  }
+
+  .blog-card .read-more {
+    font-size: 0.75rem;
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .testimonial-card {
+    padding: 16px;
+  }
+
+  .testimonial-card .stars {
+    margin-bottom: 10px;
+  }
+
+  .testimonial-card .review {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-card .reviewer .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .testimonial-card .reviewer h4 {
+    font-size: 0.8rem;
+  }
+
+  .testimonial-card .reviewer p {
+    font-size: 0.7rem;
+  }
+
+  .testimonials-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .testimonial-featured {
+    min-height: 220px;
+    padding: 16px;
+  }
+
+  .testimonial-featured .tf-content h3 {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-featured .tf-content p {
+    font-size: 0.7rem;
+  }
+
+  .testimonial-item {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .testimonial-item .ti-thumb {
+    width: 70px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .testimonial-item .ti-info h4 {
+    font-size: 0.75rem;
+  }
+
+  .testimonial-item .ti-info p {
+    font-size: 0.65rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 30px 0 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-bottom: 18px;
+  }
+
+  .footer-col h3 {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-col p {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 6px;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.75rem;
+  }
+
+  .footer-social {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .footer-social a {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    padding: 12px 0;
+    gap: 8px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.7rem;
+  }
+
+  .footer-bottom-links {
+    gap: 10px;
+  }
+
+  .footer-bottom-links a {
+    font-size: 0.7rem;
+  }
+
+  /* Forms */
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 9px 10px;
+    font-size: 0.8rem;
+  }
+
+  .form-group textarea {
+    min-height: 80px;
+  }
+
+  /* Page Elements */
+  .page-banner {
+    padding: 35px 0 25px;
+  }
+
+  .page-banner h1 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .page-banner p {
+    font-size: 0.8rem;
+  }
+
+  .page-banner .breadcrumb {
+    font-size: 0.7rem;
+    margin-top: 10px;
+  }
+
+  /* Doctor Profile */
+  .doctor-profile-header {
+    gap: 16px;
+  }
+
+  .profile-photo {
+    max-height: 250px;
+  }
+
+  .profile-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .profile-info .prof-spec {
+    font-size: 0.85rem;
+  }
+
+  .profile-meta-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .pm-item {
+    padding: 8px;
+  }
+
+  .pm-item h4 {
+    font-size: 0.7rem;
+  }
+
+  .pm-item p {
+    font-size: 0.65rem;
+  }
+
+  /* Hospital Detail */
+  .hospital-detail-hero {
+    height: 200px;
+  }
+
+  .hospital-detail-hero i {
+    font-size: 3rem;
+  }
+
+  .hd-info {
+    padding: 20px 0;
+  }
+
+  .hd-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .hd-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .hd-feature {
+    padding: 10px;
+  }
+
+  .hd-feature i {
+    font-size: 0.9rem;
+  }
+
+  .hd-feature h4 {
+    font-size: 0.7rem;
+  }
+
+  .hd-feature p {
+    font-size: 0.65rem;
+  }
+
+  /* Contact */
+  .contact-grid {
+    gap: 16px;
+  }
+
+  .contact-info-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .ci-card {
+    padding: 12px;
+  }
+
+  .ci-card i {
+    font-size: 1rem;
+  }
+
+  .ci-card h4 {
+    font-size: 0.75rem;
+  }
+
+  .ci-card p {
+    font-size: 0.7rem;
+  }
+
+  .map-placeholder {
+    height: 160px;
+    font-size: 0.8rem;
+  }
+
+  /* Emergency Banner */
+  .emergency-banner {
+    padding: 20px 0;
+  }
+
+  .emergency-banner h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .emergency-banner p {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+
+  .appointment-banner {
+    padding: 10px 0;
+  }
+
+  .appointment-banner .container {
+    gap: 8px;
+  }
+
+  .appointment-banner h3 {
+    font-size: 0.9rem;
+  }
+
+  .appointment-banner .phone-badge {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    gap: 8px;
+  }
+
+  /* Modal */
+  .modal-box {
+    padding: 20px;
+  }
+
+  .modal-box .modal-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+    margin: 0 auto 10px;
+  }
+
+  .modal-box h2 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .modal-box p {
+    font-size: 0.8rem;
+  }
+
+  .modal-box .btn {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+
+  .btn-sm {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+  }
+
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  /* Appointment Page */
+  .appointment-page {
+    padding-top: 25px;
+  }
+
+  .appointment-form-container {
+    max-width: 100%;
+  }
+}
+
+/* =============================================
+   OVERFLOW & SAFE AREA UTILITIES
+   ============================================= */
+/* Prevent horizontal overflow on all devices */
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Ensure all containers don't overflow */
+.container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Safe area for notch devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+
+  .navbar-top {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
   }
 
   .container {
-    padding: 0 16px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+}
+
+/* Word wrap and text handling */
+body,
+body * {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Prevent text overflow */
+h1, h2, h3, h4, h5, h6,
+p, a, label, span {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Table overflow handling */
+table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+/* Image responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+picture {
+  display: block;
+  width: 100%;
+}
+
+/* Form elements sizing */
+input, select, textarea, button {
+  max-width: 100%;
+}
+
+/* Prevent iOS zoom on input focus */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  a, button, input[type="button"], input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Smooth scrolling for better mobile feel */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve readability on small screens */
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
   }
 
-  .hero-ql-item h4 {
-    font-size: 0.7rem;
+  line-height: 1.6;
+}
+
+/* Mobile-friendly modals */
+@media (max-width: 768px) {
+  .modal-box {
+    margin: 16px;
+  }
+
+  .modal-overlay {
+    padding: 16px;
+  }
+}
+
+/* Fix sticky elements for mobile */
+@media (max-width: 768px) {
+  .filter-sidebar {
+    position: static !important;
+    top: auto !important;
+  }
+
+  [class*="sticky"] {
+    position: static !important;
+  }
+}
+
+/* Improve spacing consistency */
+@media (max-width: 480px) {
+  .section {
+    padding: 20px 0 !important;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
+
+/* Additional responsive text utilities */
+@media (max-width: 640px) {
+  .text-lg {
+    font-size: 1rem !important;
+  }
+
+  .text-base {
+    font-size: 0.95rem !important;
+  }
+
+  .text-sm {
+    font-size: 0.8rem !important;
+  }
+
+  .text-xs {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* Prevent layout shifts */
+html {
+  scroll-padding-top: 70px;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 50px;
+  }
+}
+
+/* Mobile optimized buttons and touch areas */
+@media (max-width: 480px) {
+  .btn {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-search .btn {
+    min-height: 44px;
+  }
+}
+
+/* Fix for input labels on mobile */
+@media (max-width: 768px) {
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 6px;
   }
 }

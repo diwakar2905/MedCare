@@ -35,7 +35,7 @@ export function renderNavbar() {
     <nav class="navbar" id="navbar">
       <div class="navbar-top">
         <a href="#/" class="navbar-logo">
-          <div class="logo-icon"><i class="fa-solid fa-plus"></i></div>
+          <img src="/Blue%20Modern%20Abstract%20Healthcare%20Medical%20Logo.png" alt="MedCare Logo" class="logo-img" />
           <h1>Med<span>Care</span></h1>
           <span class="years-badge">✦ 25 YEARS</span>
         </a>
