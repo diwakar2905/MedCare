@@ -352,41 +352,51 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 16px;
   height: 68px;
-  max-width: var(--max-width);
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
+  gap: 8px;
+  flex-wrap: nowrap;
+  min-height: 60px;
 }
 
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  flex-shrink: 0;
+  min-width: max-content;
 }
 
 .navbar-logo .logo-icon {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, var(--navy), var(--teal));
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
 .navbar-logo .logo-img {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   border-radius: var(--radius-sm);
+  flex-shrink: 0;
 }
 
 .navbar-logo h1 {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--navy);
+  white-space: nowrap;
+  margin: 0;
 }
 
 .navbar-logo h1 span {
@@ -394,30 +404,33 @@ textarea {
 }
 
 .navbar-logo .years-badge {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-left: 6px;
-  color: var(--gold);
-  font-size: 0.7rem;
-  font-weight: 600;
-  border-left: 2px solid var(--gold);
-  padding-left: 10px;
+  display: none;
 }
 
 .navbar-menu {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 0;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.navbar-menu::-webkit-scrollbar {
+  display: none;
 }
 
 .navbar-menu a {
-  padding: 8px 16px;
-  font-size: 0.88rem;
+  padding: 6px 12px;
+  font-size: 0.78rem;
   font-weight: 500;
   color: var(--navy);
   border-radius: var(--radius-sm);
   transition: var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .navbar-menu a:hover,
@@ -429,25 +442,28 @@ textarea {
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .navbar-actions .btn {
-  font-size: 0.82rem;
-  padding: 9px 18px;
+  font-size: 0.75rem;
+  padding: 8px 12px;
+  white-space: nowrap;
 }
 
 .navbar-actions .search-icon {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--navy);
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: var(--transition);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .navbar-actions .search-icon:hover {
@@ -2306,6 +2322,39 @@ textarea {
    RESPONSIVE DESIGN - TABLET (1024px and below)
    ============================================= */
 @media (max-width: 1024px) {
+  .navbar-top {
+    height: 60px;
+    padding: 0 12px;
+    gap: 6px;
+  }
+
+  .navbar-logo h1 {
+    font-size: 1rem;
+  }
+
+  .navbar-logo .logo-icon,
+  .navbar-logo .logo-img {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .navbar-menu a {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .navbar-actions .btn {
+    font-size: 0.7rem;
+    padding: 6px 10px;
+  }
+
+  .navbar-actions .search-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
   .hero-content h1 {
     font-size: 2.2rem;
   }
@@ -2395,8 +2444,12 @@ textarea {
   }
 
   .navbar-menu,
-  .navbar-actions {
+  .navbar-actions .btn:nth-child(2) {
     display: none;
+  }
+
+  .navbar-actions {
+    display: flex;
   }
 
   .hamburger {
@@ -2405,17 +2458,18 @@ textarea {
 
   .navbar-top {
     height: 54px;
-    padding: 0 16px;
+    padding: 0 12px;
+    gap: 8px;
   }
 
   .navbar-logo h1 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .navbar-logo .logo-icon,
   .navbar-logo .logo-img {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
   }
 
   .navbar-logo .years-badge {
@@ -3023,28 +3077,52 @@ textarea {
   /* Navbar */
   .navbar-top {
     height: 48px;
-    padding: 0 12px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .navbar-logo {
+    gap: 6px;
+    flex-shrink: 0;
   }
 
   .navbar-logo h1 {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .navbar-logo .logo-icon,
   .navbar-logo .logo-img {
-    width: 32px;
-    height: 32px;
-    font-size: 0.9rem;
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-actions {
+    gap: 4px;
+  }
+
+  .navbar-actions .search-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .navbar-actions .btn {
+    display: none;
   }
 
   .hamburger {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     gap: 4px;
   }
 
   .hamburger span {
-    width: 18px;
+    width: 16px;
     height: 1.5px;
   }
 
@@ -3843,6 +3921,800 @@ textarea {
   }
 }
 
+  /* Hero Section */
+  .hero {
+    padding: 20px 0 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-content p {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .hero-search {
+    padding: 6px;
+    margin: 0 auto 20px;
+  }
+
+  .hero-search input,
+  .hero-search select {
+    padding: 12px 10px;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .hero-search .btn {
+    padding: 12px 12px;
+    font-size: 0.75rem;
+  }
+
+  .hero-quick-links {
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .hero-ql-item {
+    padding: 8px 6px;
+  }
+
+  .hero-ql-item .ql-icon {
+    font-size: 1rem;
+  }
+
+  .hero-ql-item h4 {
+    font-size: 0.6rem;
+  }
+
+  .hero-ql-item p {
+    font-size: 0.55rem;
+  }
+
+  /* Hero Images */
+  .hero-image-left,
+  .hero-image-right {
+    font-size: 4rem;
+    opacity: 0.02;
+  }
+
+  /* Hero Stats */
+  .hero-stat-item {
+    padding: 10px;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .hero-stat-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .hero-stat-item p {
+    font-size: 0.6rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: 25px 0;
+  }
+
+  .section-header {
+    margin-bottom: 18px;
+  }
+
+  .section-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .section-header h2::after {
+    width: 40px;
+  }
+
+  .section-header p {
+    font-size: 0.8rem;
+    margin-top: 6px;
+  }
+
+  /* Grids - Two columns or single */
+  .quick-actions-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .qa-card {
+    padding: 12px 8px;
+  }
+
+  .qa-card .qa-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+    margin: 0 auto 6px;
+  }
+
+  .qa-card h3 {
+    font-size: 0.7rem;
+  }
+
+  .qa-card p {
+    font-size: 0.6rem;
+  }
+
+  .specialities-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .spec-card {
+    padding: 12px 8px;
+  }
+
+  .spec-card .spec-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+    margin: 0 auto 6px;
+  }
+
+  .spec-card h3 {
+    font-size: 0.7rem;
+  }
+
+  .spec-item {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .spec-item .spec-icon-line {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .spec-item h3 {
+    font-size: 0.75rem;
+  }
+
+  .spec-tabs {
+    margin-bottom: 16px;
+    overflow-x: auto;
+  }
+
+  .spec-tab {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .spec-cta-card {
+    padding: 16px 12px;
+  }
+
+  .spec-cta-card h3 {
+    font-size: 1rem;
+  }
+
+  .spec-cta-card p {
+    font-size: 0.75rem;
+    margin-bottom: 16px;
+  }
+
+  /* Doctors */
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .doctor-card .doctor-img {
+    height: 120px;
+    font-size: 2rem;
+  }
+
+  .doctor-card .doctor-info {
+    padding: 12px;
+  }
+
+  .doctor-card .doctor-info h3 {
+    font-size: 0.85rem;
+  }
+
+  .doctor-card .doctor-info .speciality {
+    font-size: 0.7rem;
+  }
+
+  .doctor-card .doctor-meta {
+    gap: 2px;
+    margin-bottom: 8px;
+  }
+
+  .doctor-card .doctor-meta span {
+    font-size: 0.7rem;
+  }
+
+  .doctor-card .view-profile {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+  }
+
+  .doctor-card .doctor-bottom {
+    padding-top: 8px;
+  }
+
+  .doctor-card .doctor-bottom .fee {
+    font-size: 0.9rem;
+  }
+
+  .doctor-card .doctor-bottom .btn {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+
+  /* Hospitals */
+  .hospitals-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hospital-card .hospital-img {
+    height: 140px;
+    font-size: 2.5rem;
+  }
+
+  .hospital-card .hospital-info {
+    padding: 12px;
+  }
+
+  .hospital-card .hospital-info h3 {
+    font-size: 0.85rem;
+  }
+
+  .hospital-card .hospital-info .location {
+    font-size: 0.75rem;
+  }
+
+  .hospital-card .hospital-features {
+    margin-bottom: 12px;
+  }
+
+  .hospital-card .hospital-features .feature {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .hospitals-scroll-wrapper {
+    gap: 8px;
+  }
+
+  .hospital-scroll-card {
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  .hospital-scroll-card .h-img {
+    height: 120px;
+    font-size: 2rem;
+  }
+
+  .hospital-scroll-card .h-info {
+    padding: 12px;
+  }
+
+  .hospital-scroll-card .h-info h3 {
+    font-size: 0.8rem;
+  }
+
+  .hospital-scroll-card .h-info .h-loc {
+    font-size: 0.7rem;
+  }
+
+  .hospital-scroll-card .h-rating {
+    font-size: 0.75rem;
+  }
+
+  /* Packages */
+  .packages-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .package-card {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .package-card .package-badge {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .package-card .package-header {
+    padding: 16px 12px 12px;
+  }
+
+  .package-card .package-header .package-icon {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+  }
+
+  .package-card .package-header h3 {
+    font-size: 0.85rem;
+  }
+
+  .package-card .package-body {
+    padding: 12px;
+  }
+
+  .package-card .package-price .price {
+    font-size: 1.3rem;
+  }
+
+  .package-card .package-price .original {
+    font-size: 0.8rem;
+  }
+
+  .package-card .package-tests li {
+    font-size: 0.7rem;
+    padding: 5px 0;
+  }
+
+  .package-card .package-body .btn {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+
+  /* International */
+  .intl-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .intl-card {
+    padding: 12px 8px;
+  }
+
+  .intl-card .intl-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+    margin: 0 auto 6px;
+  }
+
+  .intl-card h3 {
+    font-size: 0.75rem;
+  }
+
+  .intl-card p {
+    font-size: 0.65rem;
+  }
+
+  /* Why Choose Us */
+  .why-us-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .wu-card {
+    padding: 12px 8px;
+  }
+
+  .wu-card .wu-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+    margin: 0 auto 6px;
+  }
+
+  .wu-card h3 {
+    font-size: 0.85rem;
+  }
+
+  .wu-card p {
+    font-size: 0.65rem;
+  }
+
+  /* Blog */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .blog-card .blog-img {
+    height: 140px;
+    font-size: 2rem;
+  }
+
+  .blog-card .blog-info {
+    padding: 12px;
+  }
+
+  .blog-card .blog-meta {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .blog-card .blog-meta span {
+    font-size: 0.7rem;
+  }
+
+  .blog-card .blog-info h3 {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .blog-card .blog-info p {
+    font-size: 0.75rem;
+  }
+
+  .blog-card .read-more {
+    font-size: 0.75rem;
+  }
+
+  /* Testimonials */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .testimonial-card {
+    padding: 16px;
+  }
+
+  .testimonial-card .stars {
+    margin-bottom: 10px;
+  }
+
+  .testimonial-card .review {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-card .reviewer .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .testimonial-card .reviewer h4 {
+    font-size: 0.8rem;
+  }
+
+  .testimonial-card .reviewer p {
+    font-size: 0.7rem;
+  }
+
+  .testimonials-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .testimonial-featured {
+    min-height: 220px;
+    padding: 16px;
+  }
+
+  .testimonial-featured .tf-content h3 {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-featured .tf-content p {
+    font-size: 0.7rem;
+  }
+
+  .testimonial-item {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .testimonial-item .ti-thumb {
+    width: 70px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .testimonial-item .ti-info h4 {
+    font-size: 0.75rem;
+  }
+
+  .testimonial-item .ti-info p {
+    font-size: 0.65rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 30px 0 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-bottom: 18px;
+  }
+
+  .footer-col h3 {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-col p {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 6px;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.75rem;
+  }
+
+  .footer-social {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .footer-social a {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    padding: 12px 0;
+    gap: 8px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.7rem;
+  }
+
+  .footer-bottom-links {
+    gap: 10px;
+  }
+
+  .footer-bottom-links a {
+    font-size: 0.7rem;
+  }
+
+  /* Forms */
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 9px 10px;
+    font-size: 0.8rem;
+  }
+
+  .form-group textarea {
+    min-height: 80px;
+  }
+
+  /* Page Elements */
+  .page-banner {
+    padding: 35px 0 25px;
+  }
+
+  .page-banner h1 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .page-banner p {
+    font-size: 0.8rem;
+  }
+
+  .page-banner .breadcrumb {
+    font-size: 0.7rem;
+    margin-top: 10px;
+  }
+
+  /* Doctor Profile */
+  .doctor-profile-header {
+    gap: 16px;
+  }
+
+  .profile-photo {
+    max-height: 250px;
+  }
+
+  .profile-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .profile-info .prof-spec {
+    font-size: 0.85rem;
+  }
+
+  .profile-meta-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .pm-item {
+    padding: 8px;
+  }
+
+  .pm-item h4 {
+    font-size: 0.7rem;
+  }
+
+  .pm-item p {
+    font-size: 0.65rem;
+  }
+
+  /* Hospital Detail */
+  .hospital-detail-hero {
+    height: 200px;
+  }
+
+  .hospital-detail-hero i {
+    font-size: 3rem;
+  }
+
+  .hd-info {
+    padding: 20px 0;
+  }
+
+  .hd-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .hd-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .hd-feature {
+    padding: 10px;
+  }
+
+  .hd-feature i {
+    font-size: 0.9rem;
+  }
+
+  .hd-feature h4 {
+    font-size: 0.7rem;
+  }
+
+  .hd-feature p {
+    font-size: 0.65rem;
+  }
+
+  /* Contact */
+  .contact-grid {
+    gap: 16px;
+  }
+
+  .contact-info-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .ci-card {
+    padding: 12px;
+  }
+
+  .ci-card i {
+    font-size: 1rem;
+  }
+
+  .ci-card h4 {
+    font-size: 0.75rem;
+  }
+
+  .ci-card p {
+    font-size: 0.7rem;
+  }
+
+  .map-placeholder {
+    height: 160px;
+    font-size: 0.8rem;
+  }
+
+  /* Emergency Banner */
+  .emergency-banner {
+    padding: 20px 0;
+  }
+
+  .emergency-banner h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .emergency-banner p {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+
+  .appointment-banner {
+    padding: 10px 0;
+  }
+
+  .appointment-banner .container {
+    gap: 8px;
+  }
+
+  .appointment-banner h3 {
+    font-size: 0.9rem;
+  }
+
+  .appointment-banner .phone-badge {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    gap: 8px;
+  }
+
+  /* Modal */
+  .modal-box {
+    padding: 20px;
+  }
+
+  .modal-box .modal-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+    margin: 0 auto 10px;
+  }
+
+  .modal-box h2 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .modal-box p {
+    font-size: 0.8rem;
+  }
+
+  .modal-box .btn {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+
+  .btn-sm {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+  }
+
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  /* Appointment Page */
+  .appointment-page {
+    padding-top: 25px;
+  }
+
+  .appointment-form-container {
+    max-width: 100%;
+  }
+
 /* =============================================
    OVERFLOW & SAFE AREA UTILITIES
    ============================================= */
@@ -3858,10 +4730,25 @@ html {
   width: 100%;
 }
 
+/* Navbar overflow protection */
+.navbar {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.navbar-top {
+  width: 100%;
+  overflow-x: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
 /* Ensure all containers don't overflow */
 .container {
   width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Safe area for notch devices */
@@ -3872,13 +4759,13 @@ html {
   }
 
   .navbar-top {
-    padding-left: max(16px, env(safe-area-inset-left));
-    padding-right: max(16px, env(safe-area-inset-right));
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(10px, env(safe-area-inset-right));
   }
 
   .container {
-    padding-left: max(16px, env(safe-area-inset-left));
-    padding-right: max(16px, env(safe-area-inset-right));
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
   }
 }
 
@@ -3921,88 +4808,9 @@ input, select, textarea, button {
   max-width: 100%;
 }
 
-/* Prevent iOS zoom on input focus */
-@media (max-width: 768px) {
-  input, select, textarea {
-    font-size: 16px !important;
-  }
-}
-
-/* Improve touch targets on mobile */
-@media (max-width: 768px) {
-  a, button, input[type="button"], input[type="submit"] {
-    min-height: 44px;
-    min-width: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-}
-
 /* Smooth scrolling for better mobile feel */
 html {
   scroll-behavior: smooth;
-}
-
-/* Improve readability on small screens */
-@media (max-width: 480px) {
-  body {
-    font-size: 15px;
-  }
-
-  line-height: 1.6;
-}
-
-/* Mobile-friendly modals */
-@media (max-width: 768px) {
-  .modal-box {
-    margin: 16px;
-  }
-
-  .modal-overlay {
-    padding: 16px;
-  }
-}
-
-/* Fix sticky elements for mobile */
-@media (max-width: 768px) {
-  .filter-sidebar {
-    position: static !important;
-    top: auto !important;
-  }
-
-  [class*="sticky"] {
-    position: static !important;
-  }
-}
-
-/* Improve spacing consistency */
-@media (max-width: 480px) {
-  .section {
-    padding: 20px 0 !important;
-  }
-
-  .container {
-    width: 100%;
-  }
-}
-
-/* Additional responsive text utilities */
-@media (max-width: 640px) {
-  .text-lg {
-    font-size: 1rem !important;
-  }
-
-  .text-base {
-    font-size: 0.95rem !important;
-  }
-
-  .text-sm {
-    font-size: 0.8rem !important;
-  }
-
-  .text-xs {
-    font-size: 0.7rem !important;
-  }
 }
 
 /* Prevent layout shifts */
@@ -4016,28 +4824,21 @@ html {
   }
 }
 
-/* Mobile optimized buttons and touch areas */
-@media (max-width: 480px) {
-  .btn {
-    min-height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-search .btn {
-    min-height: 44px;
-  }
+/* Navbar specific utilities */
+.navbar-logo,
+.navbar-menu,
+.navbar-actions {
+  flex-shrink: 0;
+  min-width: 0;
 }
 
-/* Fix for input labels on mobile */
-@media (max-width: 768px) {
-  .form-group {
-    margin-bottom: 12px;
-  }
+.navbar-menu a {
+  flex-shrink: 0;
+  min-width: max-content;
+}
 
-  label {
-    display: block;
-    margin-bottom: 6px;
-  }
+.navbar-logo h1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

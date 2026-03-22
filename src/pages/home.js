@@ -23,7 +23,7 @@ export function renderHome() {
 
 function heroSection() {
   return `
-    <section class="hero" id="hero">
+    <section class="hero" id="hero" style="background: linear-gradient(135deg, rgba(232,244,253,0.85) 0%, rgba(212,236,249,0.9) 40%, rgba(230,249,247,0.85) 100%), url('/images/hero_hospital_1774214901948.png') center/cover no-repeat;">
       <div class="container">
         <div class="hero-content">
           <h1>Schedule Your Appointment Online</h1>
@@ -164,8 +164,8 @@ function doctorsSection() {
 export function doctorCard(doc) {
   return `
     <div class="card doctor-card">
-      <div class="doctor-img">
-        <i class="fa-solid fa-user-doctor"></i>
+      <div class="doctor-img" style="${doc.image ? `background: url('${doc.image}') center/cover no-repeat;` : ''}">
+        ${doc.image ? '' : '<i class="fa-solid fa-user-doctor"></i>'}
         <span class="availability">${doc.available === 'Today' ? '● Today' : '● Tomorrow'}</span>
       </div>
       <div class="doctor-info">
@@ -380,7 +380,9 @@ function blogSection() {
 export function blogCard(b) {
   return `
     <div class="card blog-card">
-      <div class="blog-img">${b.icon}</div>
+      <div class="blog-img" style="${b.image ? `background: url('${b.image}') center/cover no-repeat;` : ''}">
+        ${b.image ? '' : b.icon}
+      </div>
       <div class="blog-info">
         <div class="blog-meta">
           <span><i class="fa-solid fa-tag"></i> ${b.category}</span>
